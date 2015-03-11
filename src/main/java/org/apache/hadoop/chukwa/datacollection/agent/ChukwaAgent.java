@@ -733,6 +733,12 @@ public class ChukwaAgent implements AdaptorManager {
     adaptorsByName.clear();
     adaptorPositions.clear();
     adaptorStatsManager.clear();
+    
+    //shutdown connector
+    if(connector != null){
+      connector.shutdown();
+    }
+    
     if (exit)
       System.exit(0);
   }

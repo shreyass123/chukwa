@@ -319,6 +319,17 @@
             <artifactId>jsp-api-2.1</artifactId>
             <version>6.1.14</version>
           </dependency>
+          <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>0.8.1.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-test</artifactId>
+            <version>2.6.0</version>
+            <scope>test</scope>          	
+          </dependency>
     </dependencies>
 
     <developers>
@@ -698,6 +709,8 @@
                                 </copy>
                                 <copy file="${basedir}/conf/log4j.properties" tofile="${project.build.directory}/test/conf/log4j.properties"></copy>
                                 <copy file="${basedir}/conf/auth.conf" tofile="${project.build.directory}/test/conf/auth.conf"></copy>
+                                <copy file="${basedir}/conf/producer.properties" tofile="${project.build.directory}/test/conf/producer.properties"></copy>
+                                <copy file="${basedir}/conf/consumer.properties" tofile="${project.build.directory}/test/conf/consumer.properties"></copy>
                                 <chmod file="${project.build.directory}/test/conf/jmxremote.password" perm="600" />
                                 <chmod file="${project.build.directory}/test/conf/jmxremote.access" perm="600" />
                             </target>

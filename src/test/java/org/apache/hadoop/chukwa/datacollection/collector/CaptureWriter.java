@@ -20,15 +20,17 @@ package org.apache.hadoop.chukwa.datacollection.collector;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.hadoop.chukwa.Chunk;
 import org.apache.hadoop.chukwa.datacollection.writer.ChukwaWriter;
+import org.apache.hadoop.chukwa.datacollection.writer.PipelineableWriter;
 import org.apache.hadoop.chukwa.datacollection.writer.WriterException;
 import org.apache.hadoop.conf.Configuration;
 /**
  * Dumps received chunks into a public static array.
  * This class is intended for unit tests, only.
  */
-public class CaptureWriter implements ChukwaWriter {
+public class CaptureWriter extends PipelineableWriter {
   public static ArrayList<Chunk> outputs = new ArrayList<Chunk>();
 
   @Override
